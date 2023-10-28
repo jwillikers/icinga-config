@@ -1,0 +1,67 @@
+= Icinga Config
+Jordan Williams <jordan@jwillikers.com>
+:experimental:
+:icons: font
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:Icinga: https://icinga.com/[Icinga]
+
+My configuration for the {Icinga} monitoring tool.
+
+== Usage
+
+This repository contains the configuration files for {Icinga}.
+The configuration is meant to be used with the containers from the https://github.com/jwillikers/home-lab-helm[Home Lab Helm] repository.
+
+. Create a `Projects` directory in the current user's home directory.
++
+[,sh]
+----
+mkdir -p ~/Projects
+----
+
+. Clone this repository under `~/Projects`.
++
+[,sh]
+----
+git -C ~/Projects clone git@github.com:jwillikers/icinga-config.git
+----
+
+. Then mount the provided `etc/` directory inside the Icinga2 server container at `/data/etc`.
+
+=== Features
+
+To enable a feature, create a relative symlink in the `features-enabled` subdirectory that points to the feature configuration file in the `features-available` subdirectory.
+The following command demonstrates this by enabling the `icingadb` feature.
+
+[,sh]
+----
+ln --relative --symbolic etc/icinga2/features-available/icingadb.conf etc/icinga2/features-enabled/icingadb.conf
+----
+
+== References
+
+* https://icinga.com/docs/icinga-2/latest/doc/04-configuration/[Icinga 2 Documentation: Configuration]
+* https://github.com/Icinga/docker-icinga2[Icinga 2 - Docker image]
+
+== Code of Conduct
+
+Please refer to the project's link:CODE_OF_CONDUCT.adoc[Code of Conduct].
+
+== License
+
+This repository is licensed under the https://www.gnu.org/licenses/gpl-3.0.html[GPLv3].
+Please refer to the bundled link:LICENSE.adoc[license].
+
+== Copyright
+
+© 2023 Jordan Williams
+
+== Authors
+
+mailto:{email}[{author}]
