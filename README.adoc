@@ -13,6 +13,8 @@ endif::[]
 
 My configuration for the {Icinga} monitoring tool.
 
+// todo http://nagios.manubulon.com/index_snmp.html
+
 == Usage
 
 This repository contains the configuration files for {Icinga}.
