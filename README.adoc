@@ -34,6 +34,12 @@ mkdir -p ~/Projects
 git -C ~/Projects clone git@github.com:jwillikers/icinga-config.git
 ----
 
+. Generate the `TicketSalt`.
+[,sh]
+----
+echo "const TicketSalt = \"$(openssl rand -base64 30)\"" > etc/icinga2/constants.d/ticket-salt.conf
+----
+
 . Then mount the provided `etc/` directory inside the Icinga2 server container at `/data/etc`.
 
 === Features
