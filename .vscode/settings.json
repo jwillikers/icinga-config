@@ -4,6 +4,7 @@
         "icingadb",
         "ifdef",
         "jwillikers",
-        "mkdir"
+        "mkdir",
+        "nproc"
     ]
 }
