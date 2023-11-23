@@ -6,5 +6,6 @@
         "jwillikers",
         "mkdir",
         "nproc"
-    ]
+    ],
+    "asciidoc.antora.enableAntoraSupport": true
 }
