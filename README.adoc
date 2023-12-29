@@ -62,6 +62,24 @@ The following command demonstrates this by enabling the `icingadb` feature.
 ln --relative --symbolic etc/icinga2/features-available/icingadb.conf etc/icinga2/features-enabled/icingadb.conf
 ----
 
+== Validate
+
+Use the following Podman command to validate the Icinga configuration.
+
+[,sh]
+----
+podman run \
+  --env ICINGA_MASTER=1 \
+  --hostname icinga.jwillikers.io \
+  --interactive \
+  --rm \
+  --tty \
+  --volume icinga-data:/data:Z \
+  --volume ~/Projects/icinga-config/etc/icinga2:/data/etc/icinga2:ro,Z \
+  docker.io/icinga/icinga2:latest \
+  icinga2 daemon --validate
+----
+
 == References
 
 * https://icinga.com/docs/icinga-2/latest/doc/04-configuration/[Icinga 2 Documentation: Configuration]
