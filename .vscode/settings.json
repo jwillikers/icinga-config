@@ -5,7 +5,8 @@
         "ifdef",
         "jwillikers",
         "mkdir",
-        "nproc"
+        "nproc",
+        "Nushell"
     ],
     "asciidoc.antora.enableAntoraSupport": true
 }
