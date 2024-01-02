@@ -34,21 +34,44 @@ mkdir -p ~/Projects
 git -C ~/Projects clone git@github.com:jwillikers/icinga-config.git
 ----
 
-. Generate the `IcingaDbWebApiPassword` constant. 
+. For each template file in the `etc/icinga2/constants.d` directory, copy it to the same directory without the `.template` extension.
++
+Bash::
++
+[,sh]
+----
+for host_template in etc/icinga2/constants.d/*.conf.template; do cp -- "$host_template" etc/icinga2/constants.d/$(basename -- "$host_template" ".template"); done
+----
+
+fish::
++
+[,sh]
+----
+for host_template in etc/icinga2/constants.d/*.conf.template; cp -- "$host_template" etc/icinga2/constants.d/(basename -- "$host_template" ".template"); end
+----
+
+Nushell::
++
+[,sh]
+----
+for host_template in (glob "etc/icinga2/constants.d/*.conf.template") { cp $host_template $"($host_template | path parse | reject extension | path join)" }
+----
+
+. Fill in any missing credentials in the files in the `constants.d` directory, such as SNMPv3 authentication and encryption keys.
+
+.. Generate the `IcingaDbWebApiPassword` constant with the following command.
 +
 [,sh]
 ----
 echo "const IcingaDbWebApiPassword = \"$(openssl rand -base64 30)\"" > etc/icinga2/constants.d/icingadb-web-api-user-password.conf
 ----
 
-. Generate the `TicketSalt`.
+.. Use the following command to create the `TicketSalt` variable.
 +
 [,sh]
 ----
 echo "const TicketSalt = \"$(openssl rand -base64 30)\"" > etc/icinga2/constants.d/ticket-salt.conf
 ----
-
-. Fill in any missing credentials in the files in the `constants.d` directory, such as SNMPv3 authentication and encryption keys.
 
 . Then mount the provided `etc/` directory inside the Icinga2 server container at `/data/etc`.
 
