@@ -1,4 +1,6 @@
 cm4-01-snmpv3-credentials.conf
 router-snmpv3-credentials.conf
+tl-sg2008p-01-snmpv3-credentials.conf
+tl-sg2008p-02-snmpv3-credentials.conf
 icingadb-web-api-user-password.conf
 ticket-salt.conf
