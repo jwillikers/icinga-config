@@ -103,6 +103,21 @@ podman run \
   icinga2 daemon --validate
 ----
 
+== Tips & Tricks
+
+List Available Network Interfaces::
++
+[,sh]
+----
+podman run \
+  --interactive \
+  --entrypoint [] \
+  --rm \
+  --tty \
+  quay.io/jwillikers/icinga-manubulon:latest \
+  /usr/lib/nagios/plugins/check_snmp_int.pl --verbose -H 10.1.0.10 -l 'username' -x 'authPassphrase' -n ''
+----
+
 == References
 
 * https://icinga.com/docs/icinga-2/latest/doc/04-configuration/[Icinga 2 Documentation: Configuration]

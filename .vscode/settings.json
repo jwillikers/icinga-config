@@ -4,9 +4,11 @@
         "icingadb",
         "ifdef",
         "jwillikers",
+        "manubulon",
         "mkdir",
         "nproc",
-        "Nushell"
+        "Nushell",
+        "snmp"
     ],
     "asciidoc.antora.enableAntoraSupport": true
 }
