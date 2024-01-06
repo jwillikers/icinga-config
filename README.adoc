@@ -115,7 +115,7 @@ podman run \
   --rm \
   --tty \
   quay.io/jwillikers/icinga-manubulon:latest \
-  /usr/lib/nagios/plugins/check_snmp_int.pl --verbose -H 10.1.0.10 -l 'username' -x 'authPassphrase' -n ''
+    /usr/lib/nagios/plugins/check_interfaces -j MD5 --user 'username' -J 'authPassphrase' -h 10.1.0.5
 ----
 
 == References
