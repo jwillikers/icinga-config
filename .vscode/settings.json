@@ -1,6 +1,7 @@
 {
     "cSpell.words": [
         "adoc",
+        "getenforce",
         "icingadb",
         "ifdef",
         "jwillikers",
@@ -8,7 +9,8 @@
         "mkdir",
         "nproc",
         "Nushell",
-        "snmp"
+        "snmp",
+        "snmptranslate"
     ],
     "asciidoc.antora.enableAntoraSupport": true
 }
