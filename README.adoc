@@ -58,6 +58,11 @@ for host_template in (glob "etc/icinga2/constants.d/*.conf.template") { cp --no-
 ----
 
 . Fill in any missing credentials in the files in the `constants.d` directory, such as SNMPv3 authentication and encryption keys.
++
+[NOTE]
+====
+Escape any `$` or `"` characters in string constants with a backslash, `\`, to avoid confusing Icinga.
+====
 
 .. Generate the `IcingaDbWebApiPassword` constant with the following command.
 +
