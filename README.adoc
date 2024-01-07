@@ -85,7 +85,7 @@ echo "const TicketSalt = \"$(openssl rand -base64 30)\"" > etc/icinga2/constants
 +
 [,sh]
 ----
-chmod 0640 etc/icinga2/constants.d/{*-credentials.conf,*-password.conf,ticket-salt.conf}
+chmod 0660 etc/icinga2/constants.d/{*-credentials.conf,*-password.conf,ticket-salt.conf}
 ----
 
 . Determine the UID mappings inside the rootless user's namespace.
