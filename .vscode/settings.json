@@ -10,7 +10,8 @@
         "nproc",
         "Nushell",
         "snmp",
-        "snmptranslate"
+        "snmptranslate",
+        "subuid"
     ],
     "asciidoc.antora.enableAntoraSupport": true
 }
