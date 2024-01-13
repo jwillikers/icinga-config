@@ -114,7 +114,7 @@ math 655360 + 5665 - 1
 +
 [,sh]
 ----
-sudo chown 661024 etc/icinga2/constants.d/{*-credentials.conf,*-password.conf,ticket-salt.conf}
+sudo chown 661024 etc/icinga2/constants.d/{*-auth-token.conf,*-credentials.conf,*-password.conf,ticket-salt.conf}
 ----
 
 . Then mount the provided `etc/` directory inside the Icinga2 server container at `/data/etc`.
