@@ -1,3 +1,4 @@
 *-snmpv3-credentials.conf
+influxdb-auth-token.conf
 icingadb-web-api-user-password.conf
 ticket-salt.conf
