@@ -81,6 +81,8 @@ echo "const IcingaDbWebApiPassword = \"$(openssl rand -base64 30)\"" > etc/icing
 echo "const TicketSalt = \"$(openssl rand -base64 30)\"" > etc/icinga2/constants.d/ticket-salt.conf
 ----
 
+.. Add the InfluxDB authentication token to `etc/icinga2/constants.d/influxdb-auth-token.conf`.
+
 . Make sure that the sensitive files are not world readable.
 +
 [,sh]
