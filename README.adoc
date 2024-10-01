@@ -31,7 +31,7 @@ mkdir --parents ~/Projects
 +
 [,sh]
 ----
-git -C ~/Projects clone git@github.com:jwillikers/icinga-config.git
+git -C ~/Projects clone git@codeberg.org:jwillikers/icinga-config.git
 ----
 
 . For each template file in the `etc/icinga2/constants.d` directory, copy it to the same directory without the `.template` extension.
